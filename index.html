@@ -33,5 +33,22 @@
 </head>
 
 <body>
-    <h1>Yes</h1>
+    <h1>
+        Yes
+        <span data-with-name style="display: none;">
+            <span data-name></span>, you should go fucking home
+        </span>
+    </h1>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            name = window.location.pathname.slice(1).toLowerCase()
+            debugger
+            if (name) {
+                name = name.toLowerCase().charAt(0).toUpperCase() + name.slice(1)
+                document.querySelector('[data-name]').innerText = name;
+                document.querySelector('[data-with-name]').style = 'display: inline;';
+            }
+        }, false);
+
+    </script>
 </body>
